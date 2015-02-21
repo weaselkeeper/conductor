@@ -91,7 +91,7 @@ def get_options():
 
 def run(_args):
     if _args.list_domains:
-        conn=libvirt.open("qemu:///system")
+        conn=libvirt.open("qemu:///session")
 
         for id in conn.listDomainsID():
             dom = conn.lookupByID(id)
