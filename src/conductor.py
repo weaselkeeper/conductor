@@ -72,6 +72,8 @@ def get_options():
 
     parser = argparse.ArgumentParser(
         description='Manipulate VMs via libvirt')
+    parser.add_argument('-H','--host', action='store',
+                        help="What kvm host to connect to",default='localhost')
     parser.add_argument('-n', '--dry-run', action='store_true',
                         help='Dry run, do not actually perform action',
                         default=False)
@@ -91,7 +93,9 @@ def get_options():
 
 def run(_args):
     if _args.list_domains:
-        conn=libvirt.open("qemu:///session")
+        kvmhost = _args.host
+        connect_string = "qemu+ssh://" + kvmhost +"/session"
+        conn=libvirt.open(connect_string)
 
         for id in conn.listDomainsID():
             dom = conn.lookupByID(id)
