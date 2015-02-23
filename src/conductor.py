@@ -40,6 +40,7 @@ email: weaselkeeper@gmail.com
 """
 PROJECTNAME = 'conductor'
 import os
+import getpass
 import sys
 import ConfigParser
 import logging
@@ -74,6 +75,8 @@ def get_options():
         description='Manipulate VMs via libvirt')
     parser.add_argument('-H','--host', action='store',
                         help="What kvm host to connect to",default='localhost')
+    parser.add_argument('-u', '--user', action='store',
+                        help="User to connect as", default=getpass.getuser())
     parser.add_argument('-n', '--dry-run', action='store_true',
                         help='Dry run, do not actually perform action',
                         default=False)
@@ -94,7 +97,8 @@ def get_options():
 def run(_args):
     if _args.list_domains:
         kvmhost = _args.host
-        connect_string = "qemu+ssh://" + kvmhost +"/session"
+        user = _args.user
+        connect_string = "qemu+ssh://" +user + "@" + kvmhost +"/session"
         conn=libvirt.open(connect_string)
 
         for id in conn.listDomainsID():
