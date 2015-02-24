@@ -15,6 +15,7 @@ Copyright: LICENSE
 # Changelog: <changelog file; defaults to a generic changelog>
 Readme: README.md
 Files: conductor.py /usr/bin
+ conductor.conf /etc/conductor
 
 Description: Utils to manipulate VMs via libvirt
  Utils to manipulate VMs via libvirt
