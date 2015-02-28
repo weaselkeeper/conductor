@@ -73,8 +73,8 @@ def get_options():
 
     parser = argparse.ArgumentParser(
         description='Manipulate VMs via libvirt')
-    parser.add_argument('-H','--host', action='store',
-                        help="What kvm host to connect to",default='localhost')
+    parser.add_argument('-H', '--host', action='store',
+                        help="What kvm host to connect to", default='localhost')
     parser.add_argument('-u', '--user', action='store',
                         help="User to connect as", default=getpass.getuser())
     parser.add_argument('-n', '--dry-run', action='store_true',
