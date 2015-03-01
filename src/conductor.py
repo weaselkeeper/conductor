@@ -99,11 +99,11 @@ def run(_args):
         kvmhost = _args.host
         user = _args.user
         connect_string = "qemu+ssh://" +user + "@" + kvmhost +"/session"
-        conn=libvirt.open(connect_string)
+        conn = libvirt.open(connect_string)
 
-        for id in conn.listDomainsID():
-            dom = conn.lookupByID(id)
-            infos = dom.info()
+        for virt_id in conn.listDomainsID():
+            dom = conn.lookupByID(virt_id)
+            #infos = dom.info()
             print id, dom.name()
 
 def get_config(_args):
