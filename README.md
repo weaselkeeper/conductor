@@ -10,3 +10,6 @@ optional arguments:
   -l, --list_domains    List active domains
   -c CONFIG, --config CONFIG
                         Specify a path to an alternate config file
+
+
+list-domains.py is a simple example script.
