@@ -1,5 +1,5 @@
 #!/usr/bin/env  python
-
+""" List running domains on the local qemu session """
 import libvirt
 conn = libvirt.open("qemu:///session")
 
