@@ -119,7 +119,7 @@ def get_config(_args):
             _config = configfile
         else:
             log.warn('No config file found at %s', configfile)
-
+    return _config
 
 
 def get_args():
