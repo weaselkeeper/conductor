@@ -84,7 +84,7 @@ def get_options():
                         help='Enable debugging during execution.',
                         default=None)
     parser.add_argument('-l', '--list_domains', action='store_true', default=False,
-                        help='List active domains'),
+                        help='List active domains')
     parser.add_argument('-c', '--config', action='store', default=None,
                         help='Specify a path to an alternate config file')
 
