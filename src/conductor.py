@@ -58,15 +58,6 @@ logging.getLogger(PROJECTNAME).addHandler(console)
 log = logging.getLogger(PROJECTNAME)
 
 
-def run(_args):
-    """ Do, whatever it is, we do. """
-    # parse config
-    parsed_config = get_config(_args)
-    print parsed_config
-    log.debug((_args, parsed_config))
-    return
-
-
 def get_options():
     """ Parse the command line options"""
     import argparse
