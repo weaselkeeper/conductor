@@ -86,6 +86,7 @@ def get_options():
 
 
 def run(_args):
+    """ Main function, run the selected command, with args"""
     if _args.list_domains:
         kvmhost = _args.host
         user = _args.user
