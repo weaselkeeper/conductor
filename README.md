@@ -12,4 +12,4 @@ optional arguments:
                         Specify a path to an alternate config file
 
 
-list-domains.py is a simple example script.
+list-domains.py is a simple script. Little more than an example.
